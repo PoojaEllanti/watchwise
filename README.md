@@ -27,7 +27,7 @@ WatchWise focuses on answering these questions quickly.
 
 ## 💡 Solution
 
-WatchWise continuously compares the latest available market price with the previous recorded price for each stock.
+WatchWise compares the latest available market price with the previous recorded price for each stock.
 
 It then:
 
@@ -36,9 +36,9 @@ It then:
 3. Classifies its severity.
 4. Calculates an Attention Score.
 5. Explains why the movement matters.
-6. Presents the most important changes clearly on the dashboard.
+6. Presents important changes clearly on the dashboard.
 
-### Core idea
+### Core Idea
 
 > **Don't just show the user what changed. Tell them what deserves attention.**
 
@@ -58,10 +58,10 @@ WatchWise compares the latest price with the previous market snapshot and identi
 
 Price movements are categorized into different levels:
 
-- **NORMAL** — movement within the normal range
-- **HIGH** — movement above the normal range
-- **SIGNIFICANT** — stronger movement requiring more attention
-- **MAJOR** — large movement that deserves immediate attention
+- **NORMAL** — Movement within the normal range
+- **HIGH** — Movement above the normal range
+- **SIGNIFICANT** — Stronger movement requiring more attention
+- **MAJOR** — Large movement that deserves immediate attention
 
 ### 🎯 Attention Score
 
@@ -73,11 +73,11 @@ Higher movement → Higher Attention Score.
 
 WatchWise doesn't stop at displaying a percentage change.
 
-It provides a simple explanation such as:
+It provides a simple explanation of why a movement deserves attention.
+
+Example:
 
 > Price increased by 11.20%. This is a major upward movement and deserves immediate attention.
-
-This makes the dashboard easier to understand for users who don't want to interpret raw market data themselves.
 
 ### 📈 Previous Price Comparison
 
@@ -85,54 +85,61 @@ The dashboard shows the previous recorded price alongside the latest price so us
 
 ### 🧪 Demo Mode
 
-The **Run Demo** feature generates different market movement scenarios so the application's intelligence can be demonstrated without waiting for real market movements.
+The **Run Demo** feature generates different market movement scenarios so the application's intelligence can be demonstrated without waiting for large real-world market movements.
 
 ---
 
 ## 🖥️ Application Flow
 
-```text
-              ┌─────────────────┐
-              │  User Watchlist │
-              └────────┬────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ Market Data     │
-              │ Retrieval       │
-              └────────┬────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ Compare with    │
-              │ Previous Price  │
-              └────────┬────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ Detect Meaningful│
-              │ Movement        │
-              └────────┬────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ Severity +      │
-              │ Attention Score │
-              └────────┬────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ Explain Why It  │
-              │ Matters         │
-              └────────┬────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ WatchWise       │
-              │ Dashboard       │
-              └─────────────────┘
+    User Watchlist
+          ↓
+    Market Data Retrieval
+          ↓
+    Compare with Previous Price
+          ↓
+    Detect Meaningful Movement
+          ↓
+    Severity + Attention Score
+          ↓
+    Explain Why It Matters
+          ↓
+    WatchWise Dashboard
 
+---
 
+## 🏗️ Architecture
+
+WatchWise follows a simple frontend-backend architecture.
+
+    ┌───────────────────────────────┐
+    │          React Frontend       │
+    │                               │
+    │  Dashboard                    │
+    │  Watchlist                    │
+    │  Attention Scores             │
+    │  Market Insights              │
+    └───────────────┬───────────────┘
+                    │
+                    │ HTTP / REST API
+                    ▼
+    ┌───────────────────────────────┐
+    │          FastAPI Backend      │
+    │                               │
+    │  Watchlist APIs               │
+    │  Market Checks                │
+    │  Demo Engine                  │
+    │  Attention Score              │
+    │  Explanation Engine           │
+    └───────────────┬───────────────┘
+                    │
+             ┌──────┴──────┐
+             ▼             ▼
+    ┌───────────────┐  ┌────────────────┐
+    │    SQLite     │  │  Yahoo Finance │
+    │   Database    │  │  Market Data   │
+    └───────────────┘  └────────────────┘
+
+---
 
 ## 🛠️ Technology Stack
 
@@ -158,24 +165,22 @@ The **Run Demo** feature generates different market movement scenarios so the ap
 
 ## 📁 Project Structure
 
-
-watchwise/
-│
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx
-│   │   └── App.css
-│   ├── package.json
-│   └── ...
-│
-├── backend/
-│   ├── main.py
-│   ├── market.py
-│   ├── requirements.txt
-│   └── ...
-│
-└── README.md
-
+    watchwise/
+    │
+    ├── frontend/
+    │   ├── src/
+    │   │   ├── App.jsx
+    │   │   └── App.css
+    │   ├── package.json
+    │   └── ...
+    │
+    ├── backend/
+    │   ├── main.py
+    │   ├── market.py
+    │   ├── requirements.txt
+    │   └── ...
+    │
+    └── README.md
 
 ---
 
@@ -194,10 +199,8 @@ Make sure the following are installed:
 
 ## 1. Clone the Repository
 
-```bash
-git clone https://github.com/PoojaEllanti/watchwise.git
-cd watchwise
-```
+    git clone https://github.com/PoojaEllanti/watchwise.git
+    cd watchwise
 
 ---
 
@@ -205,49 +208,35 @@ cd watchwise
 
 Open a terminal and navigate to the backend:
 
-```bash
-cd backend
-```
+    cd backend
 
-Create a virtual environment:
+Create a virtual environment.
 
 ### Windows
 
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
+    python -m venv venv
+    venv\Scripts\activate
 
 ### macOS / Linux
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+    python3 -m venv venv
+    source venv/bin/activate
 
 Install the dependencies:
 
-```bash
-pip install -r requirements.txt
-```
+    pip install -r requirements.txt
 
 Start the FastAPI server:
 
-```bash
-uvicorn main:app --reload
-```
+    uvicorn main:app --reload
 
 The backend will run at:
 
-```text
-http://127.0.0.1:8000
-```
+    http://127.0.0.1:8000
 
 FastAPI interactive API documentation is available at:
 
-```text
-http://127.0.0.1:8000/docs
-```
+    http://127.0.0.1:8000/docs
 
 ---
 
@@ -257,27 +246,19 @@ Open another terminal.
 
 Navigate to the frontend:
 
-```bash
-cd frontend
-```
+    cd frontend
 
 Install dependencies:
 
-```bash
-npm install
-```
+    npm install
 
 Start the development server:
 
-```bash
-npm run dev
-```
+    npm run dev
 
 Vite will provide a local URL, usually:
 
-```text
-http://localhost:5173
-```
+    http://localhost:5173
 
 Open the URL in your browser.
 
@@ -337,19 +318,17 @@ WatchWise calculates an Attention Score between **0 and 100** based on the absol
 
 The score increases as the magnitude of the movement increases.
 
-```text
-Small movement
-      ↓
-Low Attention
-      ↓
-Moderate movement
-      ↓
-Higher Attention
-      ↓
-Large movement
-      ↓
-High Attention
-```
+    Small movement
+          ↓
+    Low Attention
+          ↓
+    Moderate movement
+          ↓
+    Higher Attention
+          ↓
+    Large movement
+          ↓
+    High Attention
 
 The purpose of the score is not to predict whether a stock will rise or fall.
 
@@ -378,23 +357,19 @@ WatchWise focuses on **prioritization**.
 
 Instead of asking the user to constantly monitor:
 
-```text
-Stock A → +1.2%
-Stock B → +2.4%
-Stock C → +11.2%
-Stock D → -0.8%
-Stock E → -7.0%
-```
+    Stock A → +1.2%
+    Stock B → +2.4%
+    Stock C → +11.2%
+    Stock D → -0.8%
+    Stock E → -7.0%
 
 WatchWise helps surface:
 
-```text
-🔴 Stock C → MAJOR → High Attention
+    🔴 Stock C → MAJOR → High Attention
 
-🟠 Stock E → SIGNIFICANT → High Attention
+    🟠 Stock E → SIGNIFICANT → High Attention
 
-🟡 Stock B → HIGH → Moderate Attention
-```
+    🟡 Stock B → HIGH → Moderate Attention
 
 This reduces information overload and gives the user a clear starting point for further investigation.
 
@@ -406,13 +381,11 @@ The application includes a demo mode that simulates different market movements.
 
 Example scenarios include:
 
-```text
-+2.8%
-+6.4%
-+11.2%
--7.0%
--12.5%
-```
+    +2.8%
+    +6.4%
+    +11.2%
+    -7.0%
+    -12.5%
 
 This allows the complete WatchWise workflow to be demonstrated even when live market conditions do not contain large movements.
 
@@ -434,9 +407,7 @@ The FastAPI backend provides the following endpoints:
 
 Interactive API documentation is available through FastAPI Swagger:
 
-```text
-http://127.0.0.1:8000/docs
-```
+    http://127.0.0.1:8000/docs
 
 ---
 
