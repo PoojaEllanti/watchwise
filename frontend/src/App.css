@@ -1,0 +1,1095 @@
+/* ================================
+   Global
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f5f7fb;
+  color: #172033;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* ================================
+   App
+================================ */
+
+.app {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+
+/* ================================
+   Header
+================================ */
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e9ef;
+
+  padding: 24px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+
+  color: #111827;
+}
+
+.header p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* ================================
+   Header Actions
+================================ */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* ================================
+   Check Button
+================================ */
+
+.check-button {
+  height: 42px;
+
+  border: none;
+
+  background: #111827;
+  color: #ffffff;
+
+  padding: 0 20px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.check-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 4px 10px rgba(15, 23, 42, 0.12);
+}
+
+.check-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.check-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+
+/* ================================
+   Demo Button
+================================ */
+
+.demo-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 42px;
+  min-width: 112px;
+
+  padding: 0 18px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.demo-button:hover:not(:disabled) {
+  background: #f8fafc;
+
+  border-color: #9ca3af;
+
+  box-shadow:
+    0 4px 10px rgba(15, 23, 42, 0.08);
+
+  transform: translateY(-1px);
+}
+
+.demo-button:active:not(:disabled) {
+  transform: translateY(0);
+
+  box-shadow:
+    0 1px 4px rgba(15, 23, 42, 0.08);
+}
+
+.demo-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* ================================
+   Main Content
+================================ */
+
+.main-content {
+  width: min(1180px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding: 32px 0 50px;
+}
+
+
+/* ================================
+   Message
+================================ */
+
+.message {
+  margin-bottom: 24px;
+
+  padding: 13px 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e7ef;
+
+  border-radius: 10px;
+
+  color: #374151;
+
+  font-size: 14px;
+}
+
+
+/* ================================
+   Summary Cards
+================================ */
+
+.summary-section {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 36px;
+}
+
+.summary-card {
+  background: #ffffff;
+
+  border: 1px solid #e7eaf0;
+
+  border-radius: 14px;
+
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 135px;
+}
+
+.summary-label {
+  font-size: 13px;
+  font-weight: 650;
+
+  color: #6b7280;
+
+  margin-bottom: 9px;
+}
+
+.summary-value {
+  font-size: 30px;
+
+  line-height: 1;
+
+  font-weight: 750;
+
+  color: #111827;
+}
+
+.summary-value.small {
+  font-size: 25px;
+}
+
+.summary-description {
+  margin-top: auto;
+
+  padding-top: 12px;
+
+  font-size: 13px;
+
+  color: #9ca3af;
+}
+
+
+/* ================================
+   Section Header
+================================ */
+
+.section-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 19px;
+
+  font-weight: 720;
+}
+
+.section-header p {
+  margin: 5px 0 0;
+
+  color: #7b8494;
+
+  font-size: 13px;
+}
+
+
+/* ================================
+   Meaningful Changes
+================================ */
+
+.changes-section {
+  margin-bottom: 40px;
+}
+
+.changes-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 16px;
+}
+
+.change-card {
+  background: #ffffff;
+
+  border: 1px solid #e7eaf0;
+
+  border-radius: 14px;
+
+  padding: 20px;
+}
+
+.change-card-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+.change-price {
+  margin-top: 24px;
+
+  font-size: 28px;
+
+  font-weight: 750;
+
+  color: #111827;
+}
+
+.change-percent {
+  margin-top: 5px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.previous-price {
+  margin-top: 12px;
+
+  font-size: 12px;
+
+  color: #9ca3af;
+}
+
+
+/* ================================
+   Stock Information
+================================ */
+
+.stock-symbol {
+  font-size: 16px;
+
+  font-weight: 750;
+
+  color: #111827;
+}
+
+.stock-name {
+  margin-top: 4px;
+
+  font-size: 13px;
+
+  color: #7b8494;
+}
+
+
+/* ================================
+   Status Badges
+================================ */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.status.meaningful {
+  background: #ecfdf3;
+
+  color: #15803d;
+}
+
+.status.normal {
+  background: #f3f4f6;
+
+  color: #6b7280;
+}
+
+.status.new {
+  background: #eef2ff;
+
+  color: #4f46e5;
+}
+
+.status.unavailable {
+  background: #fef2f2;
+
+  color: #dc2626;
+}
+
+.status.significant {
+  background: #fff4e5;
+
+  color: #b45309;
+}
+
+.status.major {
+  background: #fee2e2;
+
+  color: #b91c1c;
+}
+
+
+/* ================================
+   Positive / Negative
+================================ */
+
+.positive {
+  color: #15803d;
+}
+
+.negative {
+  color: #dc2626;
+}
+
+.unavailable-text {
+  color: #dc2626;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+
+/* ================================
+   Attention Score
+================================ */
+
+.attention-section {
+  margin-top: 20px;
+
+  margin-bottom: 18px;
+}
+
+.attention-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 28px;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+
+  color: #64748b;
+}
+
+.attention-header span {
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.attention-header strong {
+  margin-left: 8px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #111827;
+
+  white-space: nowrap;
+}
+
+.attention-bar {
+  width: 100%;
+
+  height: 8px;
+
+  background: #e5e7eb;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.attention-fill {
+  height: 100%;
+
+  border-radius: 999px;
+
+  background: #111827;
+
+  transition: width 0.4s ease;
+}
+
+
+/* ================================
+   Explanation
+================================ */
+
+.explanation {
+  padding: 14px 16px;
+
+  margin-bottom: 16px;
+
+  background: #f8fafc;
+
+  border-radius: 10px;
+
+  border: 1px solid #e2e8f0;
+}
+
+.explanation strong {
+  display: block;
+
+  font-size: 13px;
+
+  margin-bottom: 5px;
+
+  color: #111827;
+}
+
+.explanation p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #64748b;
+}
+
+
+/* ================================
+   Add Stock
+================================ */
+
+.add-section {
+  margin-bottom: 40px;
+}
+
+.add-form {
+  display: grid;
+
+  grid-template-columns:
+    0.8fr 1.5fr auto;
+
+  gap: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7eaf0;
+
+  border-radius: 14px;
+
+  padding: 16px;
+}
+
+.add-form input {
+  width: 100%;
+
+  border: 1px solid #dfe3ea;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  border-radius: 9px;
+
+  padding: 11px 13px;
+
+  outline: none;
+
+  font-size: 14px;
+}
+
+.add-form input::placeholder {
+  color: #a0a7b2;
+}
+
+.add-form input:focus {
+  border-color: #9ca3af;
+
+  box-shadow:
+    0 0 0 3px rgba(17, 24, 39, 0.05);
+}
+
+.add-form button {
+  border: none;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  padding: 11px 20px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+
+  font-weight: 650;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.add-form button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 4px 10px rgba(15, 23, 42, 0.12);
+}
+
+
+/* ================================
+   Watchlist
+================================ */
+
+.watchlist-section {
+  margin-bottom: 30px;
+}
+
+.watchlist-header {
+  align-items: flex-end;
+}
+
+.search-input {
+  width: 230px;
+
+  border: 1px solid #dfe3ea;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  border-radius: 9px;
+
+  padding: 10px 13px;
+
+  outline: none;
+
+  font-size: 13px;
+}
+
+.search-input::placeholder {
+  color: #a0a7b2;
+}
+
+.search-input:focus {
+  border-color: #9ca3af;
+
+  box-shadow:
+    0 0 0 3px rgba(17, 24, 39, 0.05);
+}
+
+
+/* ================================
+   Stock List
+================================ */
+
+.stock-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.stock-card {
+  background: #ffffff;
+
+  border: 1px solid #e7eaf0;
+
+  border-radius: 12px;
+
+  padding: 16px 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr 1fr 1fr 0.8fr auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.stock-card:hover {
+  border-color: #d5dae3;
+
+  transform: translateY(-1px);
+}
+
+.stock-price {
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.stock-change {
+  font-size: 14px;
+
+  font-weight: 650;
+}
+
+.stock-status {
+  display: flex;
+
+  align-items: center;
+}
+
+.remove-button {
+  border: 1px solid #e0e3e8;
+
+  background: #ffffff;
+
+  color: #6b7280;
+
+  padding: 7px 11px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.remove-button:hover {
+  background: #fef2f2;
+
+  border-color: #fecaca;
+
+  color: #dc2626;
+}
+
+
+/* ================================
+   Watchlist Attention Score
+================================ */
+
+.watchlist-attention {
+  width: 105px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-bottom: 7px;
+}
+
+.attention-score-row {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.watchlist-score-label {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: #94a3b8;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+}
+
+.attention-score-row strong {
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.watchlist-score-bar {
+  width: 100%;
+
+  height: 5px;
+
+  background: #e9edf3;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.watchlist-score-fill {
+  height: 100%;
+
+  min-width: 0;
+
+  border-radius: 999px;
+
+  background: #111827;
+
+  transition: width 0.4s ease;
+}
+
+
+/* ================================
+   Freshness
+================================ */
+
+.stock-freshness {
+  margin-top: 4px;
+
+  font-size: 11px;
+
+  color: #9ca3af;
+}
+
+
+/* ================================
+   Empty States
+================================ */
+
+.empty-state {
+  background: #ffffff;
+
+  border: 1px solid #e7eaf0;
+
+  border-radius: 14px;
+
+  padding: 42px 25px;
+
+  text-align: center;
+}
+
+.empty-icon {
+  width: 42px;
+  height: 42px;
+
+  margin: 0 auto 14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+
+  color: #4b5563;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+.empty-state h3 {
+  margin: 0;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.empty-state p {
+  margin: 7px 0 0;
+
+  font-size: 13px;
+
+  color: #8a93a2;
+}
+
+.watchlist-empty {
+  padding: 48px 25px;
+}
+
+
+/* ================================
+   Data Note
+================================ */
+
+.data-note {
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+.data-note span {
+  font-weight: 650;
+
+  color: #7b8494;
+}
+
+
+/* ================================
+   Responsive — Tablet
+================================ */
+
+@media (max-width: 900px) {
+
+  .header {
+    padding: 20px 24px;
+  }
+
+  .main-content {
+    width: min(
+      100% - 32px,
+      720px
+    );
+  }
+
+  .summary-section {
+    grid-template-columns: 1fr;
+  }
+
+  .changes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-card {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 14px;
+  }
+
+  .stock-status {
+    justify-content: flex-start;
+  }
+
+  .remove-button {
+    justify-self: start;
+  }
+
+  .add-form {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ================================
+   Responsive — Mobile
+================================ */
+
+@media (max-width: 600px) {
+
+  .header {
+    padding: 18px 16px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .demo-button,
+  .check-button {
+    width: 100%;
+  }
+
+  .main-content {
+    width: calc(100% - 24px);
+
+    padding-top: 22px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .stock-card {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-price {
+    margin-top: 3px;
+  }
+
+  .stock-status {
+    margin-top: 3px;
+  }
+
+  .remove-button {
+    width: 100%;
+
+    padding: 9px;
+  }
+
+  .attention-header {
+    justify-content: space-between;
+
+    gap: 12px;
+  }
+
+  .attention-header strong {
+    margin-left: 0;
+  }
+
+}
