@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://watchwise-1-0b24.onrender.com";
 
 function App() {
   const [stocks, setStocks] = useState([]);
