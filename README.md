@@ -158,7 +158,7 @@ The **Run Demo** feature generates different market movement scenarios so the ap
 
 ## 📁 Project Structure
 
-```text
+
 watchwise/
 │
 ├── frontend/
@@ -175,7 +175,7 @@ watchwise/
 │   └── ...
 │
 └── README.md
-```
+
 
 ---
 
