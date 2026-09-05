@@ -132,6 +132,8 @@ The **Run Demo** feature generates different market movement scenarios so the ap
               │ Dashboard       │
               └─────────────────┘
 
+
+
 ## 🛠️ Technology Stack
 
 ### Frontend
